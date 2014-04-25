@@ -145,7 +145,7 @@ module Locomotive
           # @return [ Array ] The list of editable elements with the right attributes
           #
           def filter_editable_elements(list)
-            list.map do |attributes|
+            Array(list).map do |attributes|
               type = attributes['type']
               attributes.keep_if { |k, _| %w(_id block slug content).include?(k) }.tap do |hash|
                 unless hash['content'].blank?
