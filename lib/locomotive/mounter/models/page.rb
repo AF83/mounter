@@ -343,7 +343,7 @@ module Locomotive
           _attributes.delete('redirect_type') if self.redirect_url.blank?
 
           # templatized page
-          _attributes['content_type'] = self.content_type.slug if self.templatized? && !self.templatized_from_parent
+          _attributes['content_type'] = self.content_type.slug if self.content_type && self.templatized? && !self.templatized_from_parent
 
           # editable elements
           _attributes['editable_elements'] = {}
